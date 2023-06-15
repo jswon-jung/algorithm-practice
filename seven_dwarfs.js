@@ -105,7 +105,6 @@ function solution(arr) {
     return acc + val;
   }, 0);
   let find = sum - 100;
-  console.log(find);
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[i] + arr[j] === find) {
@@ -127,6 +126,7 @@ solution(arr1);
 function solution(arr) {
   let answer = arr;
   let sum = answer.reduce((a, b) => a + b, 0);
+  let flag = 0;
   for (let i = 0; i < 8; i++) {
     for (let j = i + 1; j < 9; j++) {
       if (sum - (answer[i] + answer[j]) == 100) {
@@ -134,8 +134,11 @@ function solution(arr) {
         // 배열의 길이가 줄어들어도 인덱스값이 일치하기 때문이다.
         answer.splice(j, 1);
         answer.splice(i, 1);
+        flag = 1;
+        break;
       }
     }
+    if (flag === 1) break;
   }
   return answer;
 }
