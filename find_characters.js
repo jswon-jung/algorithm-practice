@@ -22,7 +22,7 @@ function solution(s, t) {
 let str1 = "COMPUTERPROGRAMMING";
 solution(str1, "R");
 
-// 풀이 3
+// 풀이 2
 function solution(s, t) {
   let answer = s.split(t).length;
   return answer - 1;
